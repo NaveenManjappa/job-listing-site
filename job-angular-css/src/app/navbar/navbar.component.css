@@ -1,0 +1,20 @@
+.header {
+  background-color: rgb(67, 56, 202);
+  border-bottom: 1px solid gray;  
+  padding: 30px;
+  font-family: 'Roboto','Arial';
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+
+.heading {  
+  font-weight: 500;
+  font-size: 30px;
+  cursor: pointer;
+  flex: 2;
+}
+
