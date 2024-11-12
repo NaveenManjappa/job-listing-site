@@ -1,20 +1,50 @@
-.header {
+.navbar {
   background-color: rgb(67, 56, 202);
   border-bottom: 1px solid gray;  
-  padding: 30px;
-  font-family: 'Roboto','Arial';
+  padding: 15px;
   color: white;
+  border-bottom: 2px solid red;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
-  
 }
 
-.heading {  
-  font-weight: 500;
-  font-size: 30px;
-  cursor: pointer;
-  flex: 2;
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 25px;
+  font-weight: 600;
 }
+
+.logo-icon {
+  width: 45px;
+  height: 45px;
+  margin-right: 10px;
+}
+
+.nav-links {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+  cursor: pointer;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-family: 'Roboto';
+  font-size:20px;
+  padding: 10px;
+}
+
+.nav-links a:hover {  
+  background-color: rgba(0,0,0,0.4);
+}
+
+.nav-links a.active {
+  background-color: black;
+}
+
+
 
