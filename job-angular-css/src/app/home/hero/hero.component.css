@@ -1,0 +1,18 @@
+.hero {
+  background-color: rgb(67,56,202);
+  color: white;
+  text-align: center;
+  padding: 55px;
+}
+
+.title {
+  font-size: 60px;
+  line-height:1;
+  font-weight:bold;
+  margin: 0;
+ 
+}
+
+.subtitle {
+  font-size: 20px;
+}
