@@ -1,1 +1,61 @@
-<p>add-job works!</p>
+<section>  
+  <div class="container">
+   <div class="form">
+      <form action="">
+        <h2>Add Job</h2>
+        <div class="form-group">
+          <label for="type">Job Type</label>
+          <select name="type" id="type" class="form-control">
+            <option *ngFor="let type of jobTypes" [value]="type">{{type}}</option>            
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="type">Job Listing Name</label>
+         <input type="text" class="form-control" placeholder="eg. Beautiful apartment in Miami">
+        </div>
+
+        <div class="form-group">
+          <label for="desc">Description</label>
+         <textarea class="form-control" name="desc" rows="4" placeholder="Add any job duties, expectations, requirements, etc"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="salary">Salary</label>
+         <select name="salary" id="salary" class="form-control">
+          <option *ngFor="let salary of salaryRanges" value="{{salary}}">{{salary}}</option>
+         </select>
+        </div>
+
+        <div class="form-group">
+          <label for="location">Location</label>
+         <input type="text" class="form-control" placeholder="Company Location">
+        </div>
+
+        <h3>Company Info</h3>
+
+        <div class="form-group">
+          <label for="company">Company Name</label>
+         <input type="text" name="company" class="form-control" placeholder="Company Name">
+        </div>
+
+        <div class="form-group">
+          <label for="desc">Company Description</label>
+         <textarea class="form-control" name="desc" rows="4" placeholder="What does your company do?"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Contact Email</label>
+         <input type="text" name="email" id="email" class="form-control" placeholder="Email address for applicants">
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Contact Phone</label>
+         <input type="text" name="phone" id="phone" class="form-control" placeholder="Optional Phone for applicants">
+        </div>
+        <button class="btn-submit">Add Job</button>
+      </form>   
+    </div>
+    
+  </div>
+</section>
