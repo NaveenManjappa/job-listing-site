@@ -1,39 +1,46 @@
 <section>  
   <div class="container">
-   <div class="form">
+   <div class="form" [formGroup]="jobForm" (ngSubmit)="CreateJob()">
       <form action="">
         <h2>Add Job</h2>
         <div class="form-group">
           <label for="type">Job Type</label>
-          <select name="type" id="type" class="form-control">
+          <select name="type" id="type" class="form-control" formControlName="type">
             <option *ngFor="let type of jobTypes" [value]="type">{{type}}</option>            
           </select>
         </div>
 
         <div class="form-group">
           <label for="type">Job Listing Name</label>
-         <input type="text" class="form-control" placeholder="eg. Beautiful apartment in Miami">
+         <input type="text" class="form-control" placeholder="eg. Beautiful apartment in Miami" formControlName="jobName">
+         <div *ngIf="jobName?.invalid && (jobName?.touched || jobName?.dirty || submitted)" class="alert">
+          <div *ngIf="jobName?.hasError('required')">Name is required</div>
+          <div *ngIf="jobName?.hasError('minlength')">Name should be atleast 3 character long</div>
+         </div>
         </div>
 
         <div class="form-group">
           <label for="desc">Description</label>
-         <textarea class="form-control" name="desc" rows="4" placeholder="Add any job duties, expectations, requirements, etc"></textarea>
+         <textarea class="form-control" name="desc" rows="4" placeholder="Add any job duties, expectations, requirements, etc" formControlName="description"></textarea>
         </div>
 
         <div class="form-group">
           <label for="salary">Salary</label>
-         <select name="salary" id="salary" class="form-control">
+         <select name="salary" id="salary" class="form-control" formControlName="salary">
           <option *ngFor="let salary of salaryRanges" value="{{salary}}">{{salary}}</option>
          </select>
         </div>
 
         <div class="form-group">
           <label for="location">Location</label>
-         <input type="text" class="form-control" placeholder="Company Location">
+         <input type="text" class="form-control" placeholder="Company Location" formControlName="location">
+          <div class="alert" *ngIf="location?.invalid && (location?.touched || location?.dirty || submitted)">
+            <div *ngIf="location?.hasError('required')">Location is required</div>
+          </div>
         </div>
 
         <h3>Company Info</h3>
-
+        <div formGroupName="companyInfo">
         <div class="form-group">
           <label for="company">Company Name</label>
          <input type="text" name="company" class="form-control" placeholder="Company Name">
@@ -46,14 +53,19 @@
 
         <div class="form-group">
           <label for="email">Contact Email</label>
-         <input type="text" name="email" id="email" class="form-control" placeholder="Email address for applicants">
+         <input type="text" name="email" id="email" class="form-control" placeholder="Email address for applicants" required email formControlName="email">
+         <div class="alert" *ngIf="email?.invalid && (email?.touched || email?.dirty || submitted)">
+          <div *ngIf="email?.hasError('required')">Email is required</div>
+          <div *ngIf="email?.hasError('email')">Email is in invalid format</div>
+        </div>
         </div>
 
         <div class="form-group">
           <label for="phone">Contact Phone</label>
          <input type="text" name="phone" id="phone" class="form-control" placeholder="Optional Phone for applicants">
         </div>
-        <button class="btn-submit">Add Job</button>
+      </div>
+        <button class="btn-submit" [disabled]="jobForm.valid" type="submit">Add Job</button>
       </form>   
     </div>
     
