@@ -11,4 +11,8 @@ export class JobsService {
   addJob(jobs:any) {
     return this.http.post('http://localhost:5001/jobs',jobs);
   }
+
+  getJobs() {
+    return this.http.get('http://localhost:5001/jobs');
+  }
 }
