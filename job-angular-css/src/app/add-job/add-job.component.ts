@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { JobsService } from '../shared/jobs.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-job',
@@ -29,8 +31,12 @@ export class AddJobComponent implements OnInit {
 
   jobForm!: FormGroup;
   submitted =false;
+  jobService = inject(JobsService);
 
+  constructor(private router:Router) {
+  }
   ngOnInit(): void {
+
     this.jobForm = new FormGroup({
       type: new FormControl(this.jobTypes[0]),
       jobName:new FormControl('',{validators: [Validators.required,Validators.minLength(3)]}),
@@ -43,8 +49,6 @@ export class AddJobComponent implements OnInit {
         email:new FormControl('',{validators:[ Validators.required,Validators.email] }),
         phone:new FormControl()
       })
-
-
     });
   }
 
@@ -62,8 +66,19 @@ export class AddJobComponent implements OnInit {
 
   CreateJob() {
     this.submitted = true;
-    console.log(this.jobForm.controls);
-    if(this.jobForm.invalid) return;
+    console.log(this.jobForm.value);
+    if(!this.jobForm.invalid){
+      this.jobService.addJob(this.jobForm.value).subscribe({
+        next: res => {
+          console.log('res');
+          this.router.navigate(['/jobs']);
+        },
+        error: err => {
+          console.log(err);
+        }
+      })
+    }
+
   }
 
 

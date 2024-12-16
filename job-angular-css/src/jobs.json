@@ -1,0 +1,32 @@
+{
+  "jobs": [
+    {
+      "id": "dc29",
+      "type": "Full-Time",
+      "jobName": "SSE",
+      "description": null,
+      "salary": "Under $50K",
+      "location": "GB",
+      "companyInfo": {
+        "company": null,
+        "description": null,
+        "email": "test@gmail.com",
+        "phone": null
+      }
+    },
+    {
+      "id": "f116",
+      "type": "Full-Time",
+      "jobName": "SSE",
+      "description": null,
+      "salary": "Under $50K",
+      "location": "IN",
+      "companyInfo": {
+        "company": null,
+        "description": null,
+        "email": "test@gmail.com",
+        "phone": null
+      }
+    }
+  ]
+}

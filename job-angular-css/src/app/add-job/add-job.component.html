@@ -12,7 +12,7 @@
 
         <div class="form-group">
           <label for="type">Job Listing Name</label>
-         <input type="text" class="form-control" placeholder="eg. Beautiful apartment in Miami" formControlName="jobName">
+         <input type="text" class="form-control" placeholder="eg. Angular Developer" formControlName="jobName">
          <div *ngIf="jobName?.invalid && (jobName?.touched || jobName?.dirty || submitted)" class="alert">
           <div *ngIf="jobName?.hasError('required')">Name is required</div>
           <div *ngIf="jobName?.hasError('minlength')">Name should be atleast 3 character long</div>
@@ -65,7 +65,7 @@
          <input type="text" name="phone" id="phone" class="form-control" placeholder="Optional Phone for applicants">
         </div>
       </div>
-        <button class="btn-submit" [disabled]="jobForm.valid" type="submit">Add Job</button>
+        <button class="btn-submit" type="submit">Add Job</button>
       </form>   
     </div>
     
