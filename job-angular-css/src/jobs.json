@@ -13,6 +13,62 @@
         "email": "contact@teksolutions.com",
         "phone": null
       }
+    },
+    {
+      "id": "7c57",
+      "type": "Full-Time",
+      "jobName": "Front-End Engineer (React & Redux)",
+      "description": "Join our team as a Front-End Developer in sunny Miami, FL. We are looking for a motivated individual with a passion for crafting beautiful and responsive web applications. Experience with UI/UX design principles and a strong attention to detail are highly desirable.",
+      "salary": "$70K - $80K",
+      "location": "Miami, FL",
+      "companyInfo": {
+        "company": null,
+        "description": null,
+        "email": "contact@loremipsum.com",
+        "phone": null
+      }
+    },
+    {
+      "id": "6516",
+      "type": "Full-Time",
+      "jobName": "React.js Developer",
+      "description": "Are you passionate about front-end development? Join our team in vibrant Brooklyn, NY, and work on exciting projects that make a difference. We offer competitive compensation and a collaborative work environment where your ideas are valued.",
+      "salary": "$70K - $80K",
+      "location": "Brooklyn, NY",
+      "companyInfo": {
+        "company": null,
+        "description": null,
+        "email": "contact@dolorsitamet.com",
+        "phone": null
+      }
+    },
+    {
+      "id": "1936",
+      "type": "Part-Time",
+      "jobName": "React Front-End Developer",
+      "description": "Join our team as a Part-Time Front-End Developer in beautiful Pheonix, AZ. We are looking for a self-motivated individual with a passion for creating engaging user experiences. This position offers flexible hours and the opportunity to work remotely.",
+      "salary": "Under $50K",
+      "location": "Pheonix, AZ",
+      "companyInfo": {
+        "company": null,
+        "description": null,
+        "email": "contact@adipisicingelit.com",
+        "phone": null
+      }
+    },
+    {
+      "id": "8b95",
+      "type": "Full-Time",
+      "jobName": "Full Stack React Developer",
+      "description": "Exciting opportunity for a Full-Time Front-End Developer in bustling Atlanta, GA. We are seeking a talented individual with a passion for building elegant and scalable web applications. Join our team and make an impact!",
+      "salary": "Under $50K",
+      "location": "Atlanta, GA",
+      "companyInfo": {
+        "company": null,
+        "description": null,
+        "email": "contact@consecteturadipisicing.com",
+        "phone": null
+      }
     }
   ]
 }

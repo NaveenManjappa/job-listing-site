@@ -1,0 +1,63 @@
+section {
+  padding: 1rem;
+}
+.container {
+  max-width: 1536px;
+  margin: auto;
+ 
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  gap: 1.5rem;
+}
+
+.grid-column {
+  padding: 1rem;
+}
+
+.developer {
+  background-color: rgb(243,244,246);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+
+}
+
+h2 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+}
+
+p {
+  margin-bottom: 1.5rem;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-jobs {
+  color: white;
+  background-color: black;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.employer {
+  background-color: rgba(224, 231, 255, 1) ;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.btn-job {
+  color: white;
+  background-color: rgb(99, 102, 241);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+
