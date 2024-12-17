@@ -1,30 +1,16 @@
 {
   "jobs": [
     {
-      "id": "dc29",
+      "id": "0df4",
       "type": "Full-Time",
-      "jobName": "SSE",
-      "description": null,
-      "salary": "Under $50K",
-      "location": "GB",
+      "jobName": "Senior React Developer",
+      "description": "We are seeking a talented Front-End Developer to join our team in Boston, MA. The ideal candidate will have strong skills in HTML, CSS, and JavaScript, with experience working with modern JavaScript frameworks such as React or Angular.",
+      "salary": "$70K - $80K",
+      "location": "Boston, MA",
       "companyInfo": {
         "company": null,
         "description": null,
-        "email": "test@gmail.com",
-        "phone": null
-      }
-    },
-    {
-      "id": "f116",
-      "type": "Full-Time",
-      "jobName": "SSE",
-      "description": null,
-      "salary": "Under $50K",
-      "location": "IN",
-      "companyInfo": {
-        "company": null,
-        "description": null,
-        "email": "test@gmail.com",
+        "email": "contact@teksolutions.com",
         "phone": null
       }
     }

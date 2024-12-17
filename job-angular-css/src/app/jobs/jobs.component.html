@@ -3,30 +3,20 @@
     <h2>Browse Jobs</h2>
     <div class="grid">
       
-      <div class="grid-column">
+      <div class="grid-column" *ngFor="let job of jobs">
         <div class="header">
-          <div class="job-name">Full-Time</div>
-          <h3>Senior React Developer</h3>
+          <div class="job-name">{{job.type}}</div>
+        <h3>{{job.jobName}}</h3>
         </div>
-        <div class="desc">We are seeing a talented front-end developer to join our team in Boston</div>
+        <div class="desc">{{job.description}}</div>
         <button class="btn-more">More</button>
-        <div class="salary">$70k-$80k</div>
+        <div class="salary">{{job.salary}}</div>
         <div class="border"></div>
         <div class="footer">
-          <div class="location">Boston,MA</div>
+          <div class="location">{{job.location}}</div>
           <a class="btn-read">Read More</a>
         </div>
-      </div>
-
-      <div class="grid-column">
-        Column2
-      </div>
-      
-      <div class="grid-column">
-        Column3
-      </div>
-     
-
+      </div> 
     </div>
   </div>
 </section>
