@@ -14,7 +14,7 @@
         <div class="border"></div>
         <div class="footer">
           <div class="location">{{job.location}}</div>
-          <a class="btn-read">Read More</a>
+          <a class="btn-read" [routerLink]="['/jobs',job.id]">Read More</a>
         </div>
       </div> 
     </div>
