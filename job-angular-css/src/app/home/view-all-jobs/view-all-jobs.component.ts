@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
+import { JobsService } from '../../shared/jobs.service';
+import { map, take } from 'rxjs';
 
 @Component({
   selector: 'app-view-all-jobs',
@@ -7,6 +9,8 @@ import { Component } from '@angular/core';
   templateUrl: './view-all-jobs.component.html',
   styleUrl: './view-all-jobs.component.css'
 })
-export class ViewAllJobsComponent {
+export class ViewAllJobsComponent  {
+  
+  
 
 }

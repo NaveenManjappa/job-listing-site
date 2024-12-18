@@ -1,0 +1,15 @@
+section {
+  padding: 1rem 1.5rem;
+  max-width: 32rem;
+  margin: auto;
+}
+a {
+  background-color: white;
+  text-decoration: none;
+  padding: 1rem 1.5rem;
+  background-color: black;
+  color: white;  
+  text-align: center;
+  display: block;
+  border-radius: 0.75rem;
+}

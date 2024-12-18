@@ -3,36 +3,22 @@
     <h2>Recent Jobs</h2>
   </div>
   <div class="grid">
-    <div class="grid-column">
+    <div class="grid-column" *ngFor="let job of recentJobs">
       <div class="header">
-        <div>Full-Time</div>
-        <h3>Senior React Developer</h3>
+        <div>{{job.type}}</div>
+        <h3>{{job.jobName}}</h3>
       </div>
-      <div class="desc">We are seeking a talented Front-End Developer to join our team in Boston, MA. The ideal ca...        
+      <div class="desc">{{job.description.substring(90,0)+'...'}}       
       </div>
       <button class="btn-more">More</button>
-      <h3 class="salary">$70K - $80K</h3>
+      <h3 class="salary">{{job.salary}}</h3>
       <div class="border"></div>
       <div class="footer">
-        <div class="location">Boston, MA</div>
+        <div class="location">{{job.location}}</div>
         <a class="btn-jobs" href="/jobs">Read More</a>
       </div>
     </div>
 
-    <div class="grid-column">
-      <div class="header">
-        <div>Full-Time</div>
-        <h3>Senior React Developer</h3>
-      </div>
-      <div class="desc">We are seeking a talented Front-End Developer to join our team in Boston, MA. The ideal ca...        
-      </div>
-      <button class="btn-more">More</button>
-      <h3 class="salary">$70K - $80K</h3>
-      <div class="border"></div>
-      <div class="footer">
-        <div class="location">Boston, MA</div>
-        <a class="btn-jobs" href="/jobs">Read More</a>
-      </div>
-    </div>
+    
   </div>
 </section>
