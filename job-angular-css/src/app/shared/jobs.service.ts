@@ -15,4 +15,8 @@ export class JobsService {
   getJobs() {
     return this.http.get('http://localhost:5001/jobs');
   }
+
+  getJob(id:string){
+    return this.http.get('http://localhost:5001/jobs/'+id);
+  }
 }

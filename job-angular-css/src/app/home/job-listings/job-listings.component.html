@@ -15,7 +15,7 @@
       <div class="border"></div>
       <div class="footer">
         <div class="location">{{job.location}}</div>
-        <a class="btn-jobs" href="/jobs">Read More</a>
+        <a class="btn-jobs" [routerLink]="['/job',job.id]" [queryParams]="{type:job.type}">Read More</a>
       </div>
     </div>
 
