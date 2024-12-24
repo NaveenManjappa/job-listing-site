@@ -1,11 +1,11 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { JobsService } from '../shared/jobs.service';
 
 @Component({
   selector: 'app-job',
   standalone: true,
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './job.component.html',
   styleUrl: './job.component.css'
 })

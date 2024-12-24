@@ -22,10 +22,10 @@
       "salary": "$70K - $80K",
       "location": "Miami, FL",
       "companyInfo": {
-        "company": null,
-        "description": null,
+        "company": "Veneer Solutions",
+        "description": "Veneer Solutions is a creative agency specializing in digital design and development. Our team is dedicated to pushing the boundaries of creativity and innovation to deliver exceptional results for our clients.",
         "email": "contact@loremipsum.com",
-        "phone": null
+        "phone": "12345"
       }
     },
     {

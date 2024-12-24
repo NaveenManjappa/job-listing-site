@@ -7,16 +7,18 @@ import { inject, Injectable } from '@angular/core';
 export class JobsService {
   http = inject(HttpClient)
   constructor() { }
+  
+    private readonly apiUrl = 'http://localhost:5001/jobs';
 
-  addJob(jobs:any) {
-    return this.http.post('http://localhost:5001/jobs',jobs);
-  }
+    addJob(jobs:any) {
+      return this.http.post(this.apiUrl, jobs);
+    }
 
-  getJobs() {
-    return this.http.get('http://localhost:5001/jobs');
-  }
+    getJobs() {
+      return this.http.get(this.apiUrl);
+    }
 
-  getJob(id:string){
-    return this.http.get('http://localhost:5001/jobs/'+id);
-  }
+    getJob(id:string){
+      return this.http.get(`${this.apiUrl}/${id}`);
+    }
 }

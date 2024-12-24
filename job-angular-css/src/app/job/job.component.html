@@ -1,1 +1,51 @@
-<p>{{selectedJob?.jobName}}</p>
+<section>
+  <div class="container">
+    <i class="fa-solid fa-arrow-left"></i>
+    <a routerLink="/jobs" >Back to Job Listings</a>
+  </div>
+</section>
+
+<section>
+  <div class="containergrid">
+    <div class="grid">
+      <div class="main">
+
+        <div class="header">
+          <div class="text">{{selectedJob?.type}}</div>
+          <h1 class="job-name">{{selectedJob.jobName}}</h1>
+          <div class="location">
+            <i class="fa-solid fa-location-pin"></i>
+            <p>{{selectedJob.location}}</p>
+          </div>
+        </div>
+
+        <div class="desc">
+          <h3 class="job-desc">Job Description</h3>
+          <p class="job-desc">{{selectedJob.description}}</p>
+          <h3 class="salary">Salary</h3>
+          <p class="salary">{{selectedJob.salary}}</p>
+        </div>
+      </div>
+
+      <div class="aside">
+        <div class="aside-header">
+          <h3 class="company-info">Company Info</h3>
+          <h2 class="company">{{ selectedJob?.companyInfo?.company }}</h2>
+          <p class="company-desc">{{ selectedJob?.companyInfo?.description }}</p>
+          <hr>
+          <h3 class="email">Contact Email:</h3>
+          <p class="email-adr">{{ selectedJob?.companyInfo?.email }}</p>
+          <h3 class="email">Contact Phone:</h3>
+          <p class="email-adr">{{ selectedJob?.companyInfo?.phone }}</p>
+        </div>
+
+        <div class="aside-manage">
+          <h3 class="manage">Manage Job</h3>
+          <a class="edit-jobs" href="/jobs">Edit Job</a>
+          <button class="btn-delete">Delete job</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
