@@ -1,8 +1,8 @@
 <section>  
   <div class="container">
-   <div class="form" [formGroup]="jobForm" (ngSubmit)="CreateJob()">
-      <form action="">
-        <h2>Add Job</h2>
+   <div class="form">
+      <form [formGroup]="jobForm" (ngSubmit)="ManageJob()">
+        <h2>{{isEditMode ? 'Edit': 'Add'}} Job</h2>
         <div class="form-group">
           <label for="type">Job Type</label>
           <select name="type" id="type" class="form-control" formControlName="type">
@@ -43,12 +43,12 @@
         <div formGroupName="companyInfo">
         <div class="form-group">
           <label for="company">Company Name</label>
-         <input type="text" name="company" class="form-control" placeholder="Company Name">
+         <input type="text" name="company" class="form-control" placeholder="Company Name" formControlName="company">
         </div>
 
         <div class="form-group">
           <label for="desc">Company Description</label>
-         <textarea class="form-control" name="desc" rows="4" placeholder="What does your company do?"></textarea>
+         <textarea class="form-control" name="desc" rows="4" placeholder="What does your company do?" formControlName="description"></textarea>
         </div>
 
         <div class="form-group">
@@ -62,10 +62,10 @@
 
         <div class="form-group">
           <label for="phone">Contact Phone</label>
-         <input type="text" name="phone" id="phone" class="form-control" placeholder="Optional Phone for applicants">
+         <input type="text" name="phone" id="phone" class="form-control" placeholder="Optional Phone for applicants" formControlName="phone">
         </div>
       </div>
-        <button class="btn-submit" type="submit">Add Job</button>
+        <button class="btn-submit" type="submit">{{isEditMode ? 'Edit': 'Add'}} Job</button>
       </form>   
     </div>
     

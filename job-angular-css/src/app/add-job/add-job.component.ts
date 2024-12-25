@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { JobsService } from '../shared/jobs.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-job',
@@ -32,22 +32,43 @@ export class AddJobComponent implements OnInit {
   jobForm!: FormGroup;
   submitted =false;
   jobService = inject(JobsService);
+  selectedJob!:any;
+  jobId!:string;
+  isEditMode:boolean = false;
 
-  constructor(private router:Router) {
+  constructor(private router:Router,private activatedRoute:ActivatedRoute) {
   }
-  ngOnInit(): void {
 
+  ngOnInit(): void {
+    this.initializeForm();
+
+    this.activatedRoute.params.subscribe(params => {
+      this.jobId = params['id'];
+      console.log('JobId', this.jobId);
+      if(this.jobId){
+        this.jobService.getJob(this.jobId).subscribe(job => {
+          this.selectedJob = job;
+          console.log('selectedJob',this.selectedJob);
+          this.isEditMode = true;
+          this.initializeForm();
+        });
+      }      
+    });
+  }
+
+  private initializeForm() {
+    
     this.jobForm = new FormGroup({
-      type: new FormControl(this.jobTypes[0]),
-      jobName:new FormControl('',{validators: [Validators.required,Validators.minLength(3)]}),
-      description:new FormControl(),
-      salary:new FormControl(this.salaryRanges[0]),
-      location:new FormControl('',Validators.required),
-      companyInfo:new FormGroup({
-        company:new FormControl(),
-        description:new FormControl(),
-        email:new FormControl('',{validators:[ Validators.required,Validators.email] }),
-        phone:new FormControl()
+      type: new FormControl(this.selectedJob?.type || this.jobTypes[0]),
+      jobName: new FormControl(this.selectedJob?.jobName || '', { validators: [Validators.required, Validators.minLength(3)] }),
+      description: new FormControl(this.selectedJob?.description || ''),
+      salary: new FormControl(this.selectedJob?.salary || this.salaryRanges[0]),
+      location: new FormControl(this.selectedJob?.location || '', Validators.required),
+      companyInfo: new FormGroup({
+        company: new FormControl(this.selectedJob?.companyInfo?.company || ''),
+        description: new FormControl(this.selectedJob?.companyInfo?.description || ''),
+        email: new FormControl(this.selectedJob?.companyInfo?.email || '', { validators: [Validators.required, Validators.email] }),
+        phone: new FormControl(this.selectedJob?.companyInfo?.phone || '')
       })
     });
   }
@@ -64,22 +85,40 @@ export class AddJobComponent implements OnInit {
     return this.jobForm.get('companyInfo.email');
   }
 
-  CreateJob() {
+  ManageJob() {
     this.submitted = true;
     console.log(this.jobForm.value);
+    console.log('jobId',this.jobId);
     if(!this.jobForm.invalid){
-      this.jobService.addJob(this.jobForm.value).subscribe({
-        next: res => {
-          console.log('res');
-          this.router.navigate(['/jobs']);
-        },
-        error: err => {
-          console.log(err);
-        }
-      })
+      
+      if(this.isEditMode)
+        this.updateJob();      
+      else 
+        this.createJob();            
     }
-
   }
 
+  private updateJob() {
+    this.jobService.updateJob(this.jobId,this.jobForm.value).subscribe({
+      next: res => {
+        console.log('res');
+        this.router.navigate(['/jobs']);
+      },
+      error: err => {
+        console.log(err);
+      }
+    });
+  }
 
+  private createJob() {
+    this.jobService.addJob(this.jobForm.value).subscribe({
+      next: res => {
+        console.log('res');
+        this.router.navigate(['/jobs']);
+      },
+      error: err => {
+        console.log(err);
+      }
+    });
+  }
 }

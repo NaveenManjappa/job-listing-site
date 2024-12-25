@@ -21,4 +21,8 @@ export class JobsService {
     getJob(id:string){
       return this.http.get(`${this.apiUrl}/${id}`);
     }
+
+    updateJob(id:string,job:any){
+      return this.http.put(`${this.apiUrl}/${id}`,job);
+    }
 }
