@@ -1,5 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { ActivatedRoute, RouterModule } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { JobsService } from '../shared/jobs.service';
 
 @Component({
@@ -12,7 +12,7 @@ import { JobsService } from '../shared/jobs.service';
 export class JobComponent implements OnInit {
   route = inject(ActivatedRoute);
   jobService = inject(JobsService);
-
+  router = inject(Router);
   selectedJob:any;
 
   ngOnInit(): void {
@@ -32,6 +32,20 @@ export class JobComponent implements OnInit {
         this.selectedJob = job;
       }
     });
+  }
+
+  deleteJob(jobId:string){
+    if(confirm("Are you sure you want to delete the job?")){
+      this.jobService.deleteJob(jobId).subscribe({
+        next: res => {
+          console.log('res');
+          this.router.navigate(['/jobs']);
+        },
+        error: err => {
+          console.log(err);
+        }
+      });
+    }
   }
 
 }

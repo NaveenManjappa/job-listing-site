@@ -42,7 +42,8 @@
         <div class="aside-manage">
           <h3 class="manage">Manage Job</h3>
           <a class="edit-jobs" [routerLink]="['/edit-job',selectedJob?.id]">Edit Job</a>
-          <button class="btn-delete">Delete job</button>
+          <button class="btn-delete" (click)="deleteJob(selectedJob?.id)">Delete job</button>
+        
         </div>
 
       </div>
